@@ -17,7 +17,6 @@ export const handler = async (event)=>{
           console.error(`API Error: Status ${response.status} Error: ${JSON.stringify(responseJson)}`);
         } else {
           console.log(`Message: ${JSON.stringify(responseJson)}`);
-          response.send(responseJson);
         }
       } catch (error) {
         console.error('Error in makeApiCall:', error);
