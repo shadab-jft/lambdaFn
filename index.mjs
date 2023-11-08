@@ -1,4 +1,5 @@
 import { apiCall } from "./apiCall.mjs";
+// import 'dotenv/config'
 export const handler = async (event) => {
   const cronjobName = event.cronjobName;
   const timeStamp = event.timeStamp;
@@ -14,3 +15,4 @@ export const handler = async (event) => {
   }
 };
 
+// console.log(await handler({cronjobName:1}));
