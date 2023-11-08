@@ -1,7 +1,7 @@
 import { apiCall } from "./apiCall.mjs";
 export const handler = async (event) => {
-  const cronjobName = 1;
-  const timeStamp = new Date().toISOString();
+  const cronjobName = event.cronjobName;
+  const timeStamp = event.timeStamp;
   const apiUrl = `${process.env.apiUrl}${cronjobName}`;
   try {
     const response = await apiCall(apiUrl);
@@ -14,4 +14,3 @@ export const handler = async (event) => {
   }
 };
 
-console.log(await handler({}));
