@@ -34,7 +34,7 @@ describe('handler method',()=>{
     }
   });
   
-  it('should give throw error for wrong url', async() => {
+  it('should give throw error if error occured while hitting url', async() => {
     try{
       jest.replaceProperty(process.env, 'apiUrl','https://jsonplaceholder.typicodeWrong.com/todos12/');
       let result = await handler.handler({cronjobName:1});
