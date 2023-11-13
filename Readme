@@ -1,1 +1,5 @@
-
+Rule - 
+{
+  "source": ["cron-job"]
+}
+Target - lambda fn 
