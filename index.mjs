@@ -7,6 +7,8 @@ export const handler = async (event) => {
   const apiUrl = `${process.env.apiUrl}${cronjobName}`;
   try {
     const response = await apiCall(apiUrl);
+    response.cronjobName = cronjobName;
+    response.timeStamp = timeStamp;
     return response;
   } catch (error) {
     error.cronjobName = cronjobName;
