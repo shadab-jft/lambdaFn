@@ -1,8 +1,9 @@
 import { apiCall } from "./apiCall.mjs";
 import 'dotenv/config'
 export const handler = async (event) => {
-  const cronjobName = event.cronjobName;
-  const timeStamp = event.timeStamp;
+  const body = event.detail
+  const cronjobName = body.cronjobName;
+  const timeStamp = body.timeStamp;
   const apiUrl = `${process.env.apiUrl}${cronjobName}`;
   try {
     const response = await apiCall(apiUrl);
